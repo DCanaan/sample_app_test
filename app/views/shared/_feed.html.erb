@@ -1,6 +1,10 @@
 <% if @feed_items.any? %>
-  <ol class="microposts">
-    <%= render @feed_items %>
-  </ol>
-  <%= will_paginate @feed_items %>
+<div id="profile-page-wall-posts"class="row">
+	<div class="col s12">
+		<!-- medium -->
+
+			<%= render @feed_items %>
+	</div>
+</div>
+<%= will_paginate @feed_items %>
 <% end %>

@@ -1,0 +1,58 @@
+<!-- START LEFT SIDEBAR NAV-->
+      <aside id="left-sidebar-nav">
+        <ul id="slide-out" class="side-nav fixed leftside-navigation">
+            <li class="user-details cyan darken-2">
+            <div class="row">
+                <div class="col col s4 m4 l4">
+                    <%= image_tag("avatar.jpg", class: "circle responsive-img valign profile-image") %>
+                </div>
+                <div class="col col s8 m8 l8">
+
+                    <% if logged_in? %>
+                    <ul id="profile-dropdown" class="dropdown-content">
+                        <li>
+                            <%= link_to 'Profile', current_user %>
+                        </li>
+                        <li>
+                            <%= link_to "Settings", edit_user_path(current_user) %>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <%= link_to "Log out", logout_path, method: "delete" %>
+                        </li>
+                    </ul>
+                    <% end %>
+
+                    <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">John Doe<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                    <p class="user-roal">Administrator</p>
+                </div>
+            </div>
+            </li>
+            <li class="bold"><%= link_to(root_path, :class => "waves-effect waves-cyan") do %>
+                <i class="material-icons">home</i> Home
+                <% end %>
+            </li>
+            <!-- li class="no-padding">
+                <ul class="collapsible collapsible-accordion">
+                    <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-invert-colors"></i> CSS</a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a href="css-typography.html">Typography</a>
+                                </li>
+                                <li><a href="css-icons.html">Icons</a>
+                                </li>
+                                <li><a href="css-animations.html">Animations</a>
+                                </li>
+                                <li><a href="css-shadow.html">Shadow</a>
+                                </li>
+                                <li><a href="css-media.html">Media</a>
+                                </li>
+                                <li><a href="css-sass.html">Sass</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li> -->
+        </ul>
+        <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only cyan"><i class="mdi-navigation-menu"></i></a>
+        </aside>
+      <!-- END LEFT SIDEBAR NAV-->

@@ -1,4 +1,4 @@
-<li id="micropost-<%= micropost.id %>">
+<!-- <li id="micropost-<%= micropost.id %>">
   <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
   <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
   <span class="content">
@@ -7,9 +7,45 @@
   </span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(micropost.created_at) %> ago.
-    <% if current_user?(micropost.user) or current_user.admin? %>
+    c
+  </span>
+</li> -->
+
+<div id="profile-page-wall-post" class="card">
+  <div class="card-profile-title">
+    <div class="row">
+      <div class="col s1">
+        <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>                        
+      </div>
+      <div class="col s10">
+        <p class="grey-text text-darken-4 margin"><%= link_to micropost.user.name, micropost.user %></p>
+        <span class="grey-text text-darken-1 ultra-small">Posted <%= time_ago_in_words(micropost.created_at) %> ago.
+        <% if current_user?(micropost.user) or current_user.admin? %>
       <%= link_to "delete", micropost, method: :delete,
                                        data: { confirm: "You sure?" } %>
     <% end %>
   </span>
-</li>
+      </div>
+      <div class="col s1 right-align">
+        <i class="mdi-navigation-expand-more"></i>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12">
+        <p><%= micropost.content %></p>
+        <%= image_tag micropost.picture.url if micropost.picture? %>
+      </div>
+    </div>
+  </div>
+  <div class="card-action row">
+    <div class="col s4 card-action-share">
+      <a href="#">Like</a>                          
+      <a href="#">Share</a>
+    </div>
+
+    <div class="input-field col s8 margin">
+      <input id="profile-comments" type="text" class="validate margin">
+      <label for="profile-comments" class="">Comments</label>
+    </div>                        
+  </div>  
+</div>

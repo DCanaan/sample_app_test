@@ -1,4 +1,4 @@
-<%= form_for(@micropost, html: { multipart: true }) do |f| %>
+<!-- <%= form_for(@micropost, html: { multipart: true }) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
     <%= f.text_area :content, placeholder: "Compose new micropost..." %>
@@ -7,9 +7,65 @@
   <span class="picture">
     <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
   </span>
-<% end %>
+<% end %> -->
 
-<script type="text/javascript">
+
+
+
+<div id="profile-page-wall" class="col s12 m12">
+  <%= form_for(@micropost, html: { multipart: true }) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+                <!-- profile-page-wall-share -->
+                <div id="profile-page-wall-share" class="row">
+                  <div class="col s12">
+                    <ul class="tabs tab-profile z-depth-1 light-blue">
+                      <li class="tab col s12"><a class="white-text waves-effect waves-light active" href="#UpdateStatus"><i class="mdi-editor-border-color"></i> Update Status</a>
+                      </li>                 
+                    </ul>
+                    <!-- UpdateStatus-->
+                    <div id="UpdateStatus" class="tab-content col s12  grey lighten-4">
+                      <div class="row">
+                        <div class="col s2">
+                          <img src="<%= image_path('avatar.jpg') %>" alt="" class="circle responsive-img valign profile-image-post">
+                        </div>
+                        <div class="input-field col s10">
+                          <%= f.text_area :content, placeholder: "Compose new micropost...", row: 2, class: "materialize-textarea"%>
+                          <!-- <textarea id="textarea" row="2" class="materialize-textarea"></textarea> -->
+                          <label for="textarea" class="">What's on your mind?</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col s12 m6 share-icons">
+                          <a href="#"><i class="mdi-image-camera-alt"></i></a>
+                          <a href="#"><i class="mdi-action-account-circle"></i></a>
+                          <a href="#"><i class="mdi-hardware-keyboard-alt"></i></a>
+                          <a href="#"><i class="mdi-communication-location-on"></i></a>
+                        </div>
+                        <div class="col s12 m6 right-align">
+                           <!-- Dropdown Trigger -->
+                            <!-- <a class='dropdown-button btn' href='#' data-activates='profliePost'><i class="mdi-action-language"></i> Public</a> -->
+
+                            <!-- Dropdown Structure -->
+                            <!-- <ul id='profliePost' class='dropdown-content'>
+                              <li><a href="#!"><i class="mdi-action-language"></i> Public</a></li>
+                              <li><a href="#!"><i class="mdi-action-face-unlock"></i> Friends</a></li>                              
+                              <li><a href="#!"><i class="mdi-action-lock-outline"></i> Only Me</a></li>
+                            </ul> -->
+
+                            <!-- <a class="waves-effect waves-light btn"><i class="mdi-maps-rate-review left"></i>Post</a> -->
+                            <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+                            <%= f.submit "Post", class: "waves-effect waves-light btn" %>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    </div>
+                  </div>
+                  <% end %>
+                </div>
+                <!--/ profile-page-wall-share -->
+
+                <script type="text/javascript">
   $('#micropost_picture').bind('change', function() {
     var size_in_megabytes = this.files[0].size/1024/1024;
     if (size_in_megabytes > 5) {
