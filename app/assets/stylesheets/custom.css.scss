@@ -66,6 +66,7 @@ p {
 #logo {
   float: left;
   margin-right: 10px;
+  margin-left: 15px;
   font-size: 1.7em;
   color: white;
   text-transform: uppercase;
@@ -81,27 +82,43 @@ p {
 /* footer */
 
 footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid $gray-medium-light;
-  color: $gray-light;
-  a {
-    color: $gray;
-    &:hover {
-      color: $gray-darker;
-    }
-  }
-  small {
-    float: left;
-  }
-  ul {
-    float: right;
-    list-style: none;
-    li {
-      float: left;
-      margin-left: 15px;
-    }
-  }
+  padding: 25px 0;
+  text-align: center;
+}
+footer span.copyright {
+  line-height: 40px;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  text-transform: none;
+}
+footer ul.quicklinks {
+  margin-bottom: 0;
+  line-height: 40px;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  text-transform: none;
+}
+ul.social-buttons {
+  margin-bottom: 0;
+}
+ul.social-buttons li a {
+  display: block;
+  background-color: #222222;
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  font-size: 20px;
+  line-height: 40px;
+  color: white;
+  outline: none;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+ul.social-buttons li a:hover,
+ul.social-buttons li a:focus,
+ul.social-buttons li a:active {
+  background-color: #fed136;
 }
 
 /* miscellaneous */
@@ -340,7 +357,7 @@ span.picture {
   }
 }
 header {
-  background-image: url('http://www.planwallpaper.com/static/images/background-wallpapers-26.jpg');
+  background-image: url("/assets/homepage/background-home.jpeg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -507,7 +524,7 @@ fieldset[disabled] .btn-xl.active {
 
 
 section {
-  padding: 100px 0;
+  padding: 90px 0;
 }
 section h2.section-heading {
   font-size: 40px;
@@ -530,4 +547,56 @@ section h3.section-subheading {
 .service-heading {
   margin: 15px 0;
   text-transform: none;
+}
+
+
+
+.marque {
+    width: auto;
+    max-width: 100%;
+    vertical-align: center;
+    margin-top: 40px;
+}
+
+
+.bg-bwimage {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+    text-align: center;
+    color: #fff;
+    background-image: url("/assets/homepage/background-partenaire.jpg");
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+
+/* Contact */
+
+ul.contacts {
+  padding-left: 20px;
+}
+ul.contacts li {
+  margin-bottom: 5px;
+}
+footer ul.contacts li {
+  margin-bottom: 2px;
+}
+i.contact {
+    margin-right: 5px;
+    width: auto;
+    height: auto;
+    line-height: 18px;
+}
+
+#contact-form h2 {
+  font-size: 2.2em;
+  text-align: left;
+}
+
+#contact-form {
+  padding: 90px 0;
 }
