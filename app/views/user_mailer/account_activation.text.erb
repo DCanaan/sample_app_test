@@ -1,5 +1,5 @@
-Hi <%= @user.name %>,
+Bonjour <%= @user.name %>,
 
-Welcome to the Sample App! Click on the link below to activate your account:
+Bienvenue sur le site de l'EEKSM. Clique sur le lien suivant afin d'activer ton compte et d'acceder au site :
 
 <%= edit_account_activation_url(@user.activation_token, email: @user.email) %>
